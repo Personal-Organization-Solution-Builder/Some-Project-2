@@ -1,0 +1,28 @@
+minimum_cumulusci_version: '3.88.0'
+project:
+    name: Some-Project-2
+    package:
+        name: Some-Project-2
+        api_version: '61.0'
+    git:
+        default_branch: 'main'
+        prefix_feature: 'feature/'
+        prefix_beta: 'beta/'
+        prefix_release: 'release/'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/Some-Project-2/tests
+            options:
+                outputdir: robot/Some-Project-2/results
+
+    robot_testdoc:
+        options:
+            path: robot/Some-Project-2/tests
+            output: robot/Some-Project-2/doc/Some-Project-2_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
